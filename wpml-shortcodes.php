@@ -64,6 +64,9 @@ function _icl_ensure_name( $name, $string ){
 		$name = sanitize_title( $string );
 	}
 
+	// The `name` column in the database table is VARCHAR(160).
+	$name = substr( $name, 0, 160 );
+
 	return $name;
 }
 
